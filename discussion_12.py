@@ -29,7 +29,13 @@ def add_employee(filename, cur, conn):
     file_data = f.read()
     f.close()
     # THE REST IS UP TO YOU
-    pass
+    employee_data = json.loads(file_data)
+    for item in employee_data:
+        employee_id = int(item['employee_id'])
+        first_name = item['first_name']
+        last_name = item['last_name']
+        hire_date = item['hire_date']
+    
 
 # TASK 2: GET JOB AND HIRE_DATE INFORMATION
 def job_and_hire_date(cur, conn):
