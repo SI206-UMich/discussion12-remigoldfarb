@@ -35,6 +35,9 @@ def add_employee(filename, cur, conn):
         first_name = item['first_name']
         last_name = item['last_name']
         hire_date = item['hire_date']
+        job_id = int(item['job_id'])
+        salary = int(item['salary'])
+        cur.execute('INSERT INTO Employees (employee_id, first_name, last_name, hire_date, job_id, salary) VALUES (?,?,?,?,?,?)', (employee_id, first_name, last_name, hire_date, job_id, salary))
     
 
 # TASK 2: GET JOB AND HIRE_DATE INFORMATION
